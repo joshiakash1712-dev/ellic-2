@@ -1,0 +1,54 @@
+{
+  "common": {
+    "appName": "एलिक्स कनेक्ट",
+    "home": "मुख्यपृष्ठ",
+    "save": "जतन करा",
+    "cancel": "रद्द करा",
+    "delete": "हटवा",
+    "edit": "संपादित करा",
+    "add": "जोडा",
+    "search": "शोधा",
+    "online": "ऑनलाइन",
+    "offline": "ऑफलाइन",
+    "menu": "मेनू",
+    "more": "अधिक"
+  },
+  "nav": {
+    "dashboard": "डॅशबोर्ड",
+    "posBilling": "पीओएस बिलिंग",
+    "pos": "पीओएस",
+    "posBill": "पीओएस बिल",
+    "inventory": "इन्व्हेंटरी आणि स्टॉक",
+    "stock": "स्टॉक",
+    "customers": "ग्राहक आणि खाते",
+    "customersShort": "ग्राहक",
+    "suppliers": "पुरवठादार",
+    "suppliersShort": "पुरवठादार",
+    "reports": "अहवाल आणि जीएसटी",
+    "reportsShort": "अहवाल",
+    "templates": "इनव्हॉइस टेम्पलेट्स",
+    "templatesShort": "टेम्पलेट्स",
+    "crew": "स्टोअर कर्मचारी आणि भूमिका",
+    "crewShort": "कर्मचारी",
+    "mySales": "माझी विक्री",
+    "store": "स्टोअर",
+    "wholesale": "घाऊक",
+    "admin": "अॅडमिन"
+  },
+  "landing": {
+    "product": "उत्पादन",
+    "features": "वैशिष्ट्ये",
+    "howItWorks": "हे कसे कार्य करते",
+    "guide": "मार्गदर्शक",
+    "signIn": "साइन इन करा",
+    "signOut": "साइन आउट",
+    "getStarted": "सुरू करा",
+    "appDemo": "अॅप डेमो",
+    "exitDemo": "डेमो बंद करा"
+  },
+  "settings": {
+    "title": "सिस्टम सेटिंग्ज",
+    "language": "भाषा",
+    "selectLanguage": "भाषा निवडा"
+  }
+}

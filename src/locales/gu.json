@@ -1,0 +1,44 @@
+{
+  "common": {
+    "appName": "એલિક્સ કનેક્ટ",
+    "home": "હોમ",
+    "save": "સાચવો",
+    "cancel": "રદ કરો",
+    "search": "શોધો",
+    "online": "ઓનલાઇન",
+    "offline": "ઓફલાઇન",
+    "menu": "મેનુ",
+    "more": "વધુ"
+  },
+  "nav": {
+    "dashboard": "ડેશબોર્ડ",
+    "posBilling": "પીઓએસ બિલિંગ",
+    "pos": "પીઓએસ",
+    "inventory": "ઇન્વેન્ટરી અને સ્ટોક",
+    "stock": "સ્ટોક",
+    "customers": "ગ્રાહકો અને ખાતા",
+    "customersShort": "ગ્રાહકો",
+    "suppliers": "સપ્લાયર્સ",
+    "suppliersShort": "સપ્લાયર્સ",
+    "reports": "રિપોર્ટ્સ અને જીએસટી",
+    "reportsShort": "રિપોર્ટ્સ",
+    "templates": "ઇન્વોઇસ ટેમ્પલેટ્સ",
+    "crew": "સ્ટોર સ્ટાફ અને ભૂમિકાઓ",
+    "mySales": "મારું વેચાણ",
+    "store": "સ્ટોર",
+    "wholesale": "જથ્થાબંધ",
+    "admin": "એડમિન"
+  },
+  "landing": {
+    "signIn": "સાઇન ઇન કરો",
+    "signOut": "સાઇન આઉટ",
+    "getStarted": "શરૂ કરો",
+    "appDemo": "એપ ડેમો",
+    "exitDemo": "ડેમો બંધ કરો"
+  },
+  "settings": {
+    "title": "સિસ્ટમ સેટિંગ્સ",
+    "language": "ભાષા",
+    "selectLanguage": "ભાષા પસંદ કરો"
+  }
+}

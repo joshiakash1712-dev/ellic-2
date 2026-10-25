@@ -1,0 +1,40 @@
+{
+  "common": {
+    "appName": "إليكس كونكت",
+    "home": "الرئيسية",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "search": "بحث",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "menu": "القائمة",
+    "more": "المزيد"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "posBilling": "فواتير نقاط البيع",
+    "inventory": "المخزون والبضائع",
+    "stock": "المخزون",
+    "customers": "العملاء والحسابات",
+    "customersShort": "العملاء",
+    "suppliers": "الموردون",
+    "reports": "التقارير والضرائب",
+    "templates": "قوالب الفواتير",
+    "crew": "الموظفون والأدوار",
+    "mySales": "مبيعاتي",
+    "store": "المتجر",
+    "wholesale": "الجملة",
+    "admin": "المسؤول"
+  },
+  "landing": {
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "getStarted": "ابدأ الآن",
+    "appDemo": "عرض تجريبي",
+    "exitDemo": "إنهاء العرض"
+  },
+  "settings": {
+    "title": "إعدادات النظام",
+    "language": "اللغة"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "common": {
+    "appName": "Ellic",
+    "home": "Accueil",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "search": "Rechercher",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "menu": "Menu",
+    "more": "Plus"
+  },
+  "nav": {
+    "dashboard": "Tableau de Bord",
+    "posBilling": "Facturation PDV",
+    "inventory": "Inventaire et Stock",
+    "stock": "Stock",
+    "customers": "Clients et Crédit",
+    "customersShort": "Clients",
+    "suppliers": "Fournisseurs",
+    "suppliersShort": "Fournisseurs",
+    "reports": "Rapports et Taxes",
+    "reportsShort": "Rapports",
+    "templates": "Modèles de Facture",
+    "crew": "Équipe et Rôles",
+    "mySales": "Mes Ventes",
+    "store": "Magasin",
+    "wholesale": "Grossiste",
+    "admin": "Admin"
+  },
+  "landing": {
+    "signIn": "Connexion",
+    "signOut": "Déconnexion",
+    "getStarted": "Commencer",
+    "appDemo": "Démo App",
+    "exitDemo": "Quitter la Démo"
+  },
+  "settings": {
+    "title": "Paramètres Système",
+    "language": "Langue"
+  }
+}

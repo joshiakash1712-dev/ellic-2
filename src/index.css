@@ -1,0 +1,1021 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------- */
+/* BRAND COLOR TOKENS & SYSTEM THEME VARIABLES (PHASE 3B)        */
+/* ------------------------------------------------------------- */
+:root {
+  /* Brand Palette — Cyber Sapphire & Obsidian Cobalt */
+  --color-brand-primary: #2563EB;        /* blue-600: Electric Cobalt */
+  --color-brand-primary-light: #3B82F6;  /* blue-500: Electric Blue */
+  --color-brand-accent: #0284C7;         /* sky-600: Deep Sapphire */
+  --color-brand-highlight: #38BDF8;      /* sky-400: Ice Cyan */
+  --color-brand-dark: #070B14;           /* Level 0: Obsidian Midnight */
+  --color-brand-surface-dark: #0E1726;   /* Level 1: Midnight Navy */
+  --color-brand-bg-light: #F8FAFC;       /* Light mode Level 0 */
+  --color-brand-bg-dark: #070B14;        /* Dark mode Level 0 */
+  --gradient-brand: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #38BDF8 100%);
+
+  /* Surface Hierarchy Tokens (Dark Default) */
+  --ellix-bg-level-0: #070B14;           /* Application background */
+  --ellix-surface-level-1: #0E1726;      /* Standard card / panel / table surface */
+  --ellix-surface-level-2: #152238;      /* Elevated card / dropdown / modal surface */
+  --ellix-surface-level-3: rgba(7, 11, 20, 0.85); /* Special overlay / dialog backdrop */
+
+  /* Border Tokens */
+  --ellix-border-subtle: rgba(148, 163, 184, 0.14);
+  --ellix-border-default: rgba(148, 163, 184, 0.22);
+  --ellix-border-strong: rgba(37, 99, 235, 0.45);
+
+  /* Text Hierarchy Tokens */
+  --ellix-text-primary: #F8FAFC;
+  --ellix-text-secondary: #94A3B8;
+  --ellix-text-muted: #64748B;
+
+  /* Semantic Status Tokens */
+  --ellix-status-success: #2563EB;
+  --ellix-status-warning: #F59E0B;
+  --ellix-status-danger: #F43F5E;
+
+  /* Border Radius Scale */
+  --ellix-radius-sm: 0.5rem;             /* 8px  - rounded-lg (controls, buttons, inputs, badges) */
+  --ellix-radius-md: 0.75rem;            /* 12px - rounded-xl (cards, panels, tables) */
+  --ellix-radius-lg: 1rem;               /* 16px - rounded-2xl (dialogs, prominent containers) */
+
+  /* Elevation Shadows */
+  --ellix-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.22);
+  --ellix-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --ellix-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.48);
+
+  /* Motion & Transition Tokens */
+  --ellix-transition-duration: 0.3s;
+  --ellix-transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ellix-motion-fast: 150ms;
+  --ellix-motion-medium: 320ms;
+  --ellix-motion-slow: 700ms;
+  --ellix-motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark,
+html.dark {
+  --color-brand-text-accent: #38BDF8;
+  --ellix-bg-level-0: #070B14;
+  --ellix-surface-level-1: #0E1726;
+  --ellix-surface-level-2: #152238;
+  --ellix-border-subtle: rgba(148, 163, 184, 0.14);
+  --ellix-border-default: rgba(148, 163, 184, 0.22);
+  --ellix-text-primary: #F8FAFC;
+  --ellix-text-secondary: #94A3B8;
+  --ellix-text-muted: #64748B;
+}
+
+html.light,
+html.theme-light {
+  --ellix-bg-level-0: #F8FAFC;
+  --ellix-surface-level-1: #FFFFFF;
+  --ellix-surface-level-2: #F1F5F9;
+  --ellix-border-subtle: rgba(15, 23, 42, 0.08);
+  --ellix-border-default: rgba(15, 23, 42, 0.14);
+  --ellix-text-primary: #0F172A;
+  --ellix-text-secondary: #334155;
+  --ellix-text-muted: #64748B;
+  --ellix-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --ellix-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(15, 23, 42, 0.05);
+  --ellix-shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(15, 23, 42, 0.05);
+}
+
+/* Official Ellix Connect Logo Wordmark Adaptation */
+html.light .ellix-logo-wordmark,
+html.theme-light .ellix-logo-wordmark {
+  fill: #0F172A;
+}
+
+/* ------------------------------------------------------------- */
+/* SURFACE HIERARCHY & GLASSMORPHISM DESIGN TOKENS               */
+/* ------------------------------------------------------------- */
+.ellix-bg-0 {
+  background-color: var(--ellix-bg-level-0);
+}
+
+.ellix-surface-1 {
+  background-color: var(--ellix-surface-level-1);
+  border: 1px solid var(--ellix-border-subtle);
+  box-shadow: var(--ellix-shadow-sm);
+}
+
+.ellix-surface-2 {
+  background-color: var(--ellix-surface-level-2);
+  border: 1px solid var(--ellix-border-default);
+  box-shadow: var(--ellix-shadow-md);
+}
+
+.glass-panel {
+  background-color: #0E1726;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+}
+
+.dark .glass-panel,
+html.dark .glass-panel {
+  background-color: rgba(14, 23, 38, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+html.light .glass-panel,
+html.theme-light .glass-panel {
+  background-color: rgba(255, 255, 255, 0.98);
+  background-image: none;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04);
+  color: #0F172A;
+}
+
+/* Interactive hover enhancement for clickable cards & buttons */
+.glass-panel-interactive {
+  transition:
+    transform var(--ellix-transition-duration) var(--ellix-transition-ease),
+    box-shadow var(--ellix-transition-duration) var(--ellix-transition-ease),
+    border-color var(--ellix-transition-duration) var(--ellix-transition-ease);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24), 0 0 16px rgba(37, 99, 235, 0.15);
+}
+
+html.light .glass-panel-interactive:hover,
+html.theme-light .glass-panel-interactive:hover {
+  border-color: #2563EB;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08), 0 0 12px rgba(37, 99, 235, 0.14);
+}
+
+/* ------------------------------------------------------------- */
+/* HIGH-CONTRAST DAYLIGHT APPLICATION THEME OVERRIDES            */
+/* ------------------------------------------------------------- */
+:where(html.light, html.theme-light) .ellix-app-shell {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+/* Level 0 & Nested Sub-surfaces inside App Shell & Modals */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .bg-\[\#0A0E1A\],
+  .bg-\[\#0A0E1A\]\/95,
+  .bg-\[\#0A0E1A\]\/90,
+  .bg-\[\#0A0E1A\]\/85,
+  .bg-\[\#0A0E1A\]\/80,
+  .bg-\[\#0A0E1A\]\/75,
+  .bg-\[\#0A0E1A\]\/70,
+  .bg-\[\#0A0E1A\]\/60,
+  .bg-\[\#0A0E1A\]\/50,
+  .bg-\[\#0A0E1A\]\/40,
+  .bg-\[\#0D1322\],
+  .bg-slate-950,
+  .bg-slate-950\/98,
+  .bg-slate-950\/95,
+  .bg-slate-950\/90,
+  .bg-slate-950\/85,
+  .bg-slate-950\/80,
+  .bg-slate-950\/70,
+  .bg-slate-950\/60,
+  .bg-slate-950\/50,
+  .bg-slate-950\/40,
+  .bg-black\/30,
+  .bg-black\/20
+):not(#theme-card-dark *):not(.fixed.inset-0) {
+  background-color: #F8FAFC !important;
+  color: #0F172A;
+}
+
+/* Modal Backdrop Overlays in Light Mode */
+:where(html.light, html.theme-light) :where(
+  #settings-modal-overlay,
+  #notification-modal-overlay,
+  #account-sync-hub-overlay,
+  .ellix-app-shell .fixed.inset-0.bg-\[\#0A0E1A\]\/90,
+  .ellix-app-shell .fixed.inset-0.bg-\[\#0A0E1A\]\/85,
+  .ellix-app-shell .fixed.inset-0.bg-\[\#0A0E1A\]\/80,
+  .ellix-app-shell .fixed.inset-0.bg-slate-950\/90,
+  .ellix-app-shell .fixed.inset-0.bg-slate-950\/85,
+  .ellix-app-shell .fixed.inset-0.bg-slate-950\/80,
+  .ellix-app-shell .fixed.inset-0.bg-slate-950\/70,
+  .ellix-app-shell .fixed.inset-0.bg-black\/70,
+  .ellix-app-shell .fixed.inset-0.bg-black\/80
+) {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+}
+
+/* Neutralize internal dark -z-10 backdrop tints inside glass panels in light mode */
+:where(html.light, html.theme-light) .glass-panel > .-z-10 {
+  background-image: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(248, 250, 252, 0.5) 50%, rgba(56, 189, 248, 0.06) 100%) !important;
+}
+
+/* Level 1 Primary Card & Panel Surfaces */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .bg-\[\#121826\],
+  .bg-\[\#121826\]\/95,
+  .bg-\[\#121826\]\/90,
+  .bg-\[\#121826\]\/80,
+  .bg-slate-900,
+  .bg-slate-900\/95,
+  .bg-slate-900\/90,
+  .bg-slate-900\/80,
+  .bg-slate-900\/70,
+  .bg-slate-900\/60,
+  .bg-slate-900\/50,
+  .bg-slate-900\/40
+):not(#theme-card-dark):not(#theme-card-dark *) {
+  background-color: #FFFFFF !important;
+  color: #0F172A;
+}
+
+/* Level 2 Elevated Popovers, Dropdowns, Modals & Secondary Surfaces */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-\[\#161D2C\],
+  .bg-\[\#161D2C\]\/95,
+  .bg-\[\#161D2C\]\/90,
+  .bg-\[\#161D2C\]\/80
+):not(#theme-card-dark *) {
+  background-color: #FFFFFF !important;
+  color: #0F172A;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-slate-800,
+  .bg-slate-800\/90,
+  .bg-slate-800\/80,
+  .bg-slate-800\/70,
+  .bg-slate-800\/60,
+  .bg-slate-800\/50,
+  .bg-slate-800\/40,
+  .bg-slate-700,
+  .bg-slate-700\/80,
+  .bg-slate-700\/60
+):not(#theme-card-dark *) {
+  background-color: #F1F5F9 !important;
+  color: #1E293B;
+}
+
+/* Dark Semantic Tinted Surfaces -> Crisp Daylight Pastel Tints */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-blue-950\/20,
+  .bg-blue-950\/30,
+  .bg-blue-950\/40,
+  .bg-blue-950\/90,
+  .bg-sky-950\/20,
+  .bg-sky-950\/30,
+  .bg-sky-500\/10,
+  .bg-sky-500\/15,
+  .bg-sky-500\/20,
+  .bg-blue-500\/10,
+  .bg-blue-500\/15,
+  .bg-blue-500\/20
+):not(#theme-card-dark *) {
+  background-color: #F0F9FF !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-amber-950\/20,
+  .bg-amber-950\/30
+):not(#theme-card-dark *) {
+  background-color: #FFFBEB !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-rose-950\/10,
+  .bg-rose-950\/20,
+  .bg-rose-950\/30,
+  .bg-rose-950\/40,
+  .bg-rose-950\/60,
+  .bg-red-950\/20
+):not(#theme-card-dark *) {
+  background-color: #FFF1F2 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-indigo-950\/20,
+  .bg-blue-950\/20,
+  .bg-blue-950\/30
+):not(#theme-card-dark *) {
+  background-color: #EEF2FF !important;
+}
+
+/* Gradient Header Banners & Dark Gradient Cards inside App Shell */
+:where(html.light, html.theme-light) .ellix-app-shell :where(
+  .from-\[\#121826\],
+  .from-\[\#0A0E1A\],
+  .from-slate-900,
+  .from-slate-950,
+  .from-slate-800\/40,
+  .from-blue-950,
+  .from-blue-950\/40,
+  .from-blue-950\/50,
+  .from-amber-950\/40,
+  .to-slate-900,
+  .to-slate-950,
+  .to-\[\#121826\],
+  .to-blue-950\/30,
+  .to-blue-950\/40,
+  .via-slate-900
+):not(#theme-card-dark *):not(.-z-10) {
+  background-image: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 65%, #EFF6FF 100%) !important;
+  background-color: #FFFFFF !important;
+}
+
+/* Interactive Hover States in Light Mode */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .hover\:bg-\[\#161D2C\]:hover,
+  .hover\:bg-\[\#121826\]:hover,
+  .hover\:bg-\[\#0A0E1A\]:hover,
+  .hover\:bg-slate-900:hover,
+  .hover\:bg-slate-800:hover,
+  .hover\:bg-slate-800\/90:hover,
+  .hover\:bg-slate-800\/80:hover,
+  .hover\:bg-slate-800\/60:hover,
+  .hover\:bg-slate-800\/50:hover,
+  .hover\:bg-slate-800\/40:hover,
+  .hover\:bg-slate-800\/30:hover,
+  .hover\:bg-slate-700:hover,
+  .hover\:bg-slate-700\/80:hover,
+  .hover\:bg-slate-700\/60:hover,
+  .hover\:bg-slate-700\/50:hover
+):not(#theme-card-dark *) {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Crisp Daylight Borders & Dividers */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .border-slate-800,
+  .border-slate-800\/90,
+  .border-slate-800\/80,
+  .border-slate-800\/70,
+  .border-slate-800\/60,
+  .border-slate-700,
+  .border-slate-700\/80,
+  .border-slate-700\/70,
+  .border-slate-700\/60,
+  .border-slate-700\/50
+):not(#theme-card-dark):not(#theme-card-dark *) {
+  border-color: #CBD5E1 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .divide-slate-800 > :not([hidden]) ~ :not([hidden]),
+  .divide-slate-800\/80 > :not([hidden]) ~ :not([hidden]),
+  .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]),
+  .divide-slate-700 > :not([hidden]) ~ :not([hidden])
+) {
+  border-color: #E2E8F0 !important;
+}
+
+/* Clean Daylight Elevation Shadows (Prevents heavy dark-mode muddy shadows in Light Theme) */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl
+):not(#theme-card-dark) {
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* High-Contrast Daylight Typography Mapping
+   Step 1: Convert all light/white text classes on surfaces to deep ink (#0F172A / #334155 / #475569) */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .text-white,
+  .text-slate-50,
+  .text-slate-100
+):not(#theme-card-dark):not(#theme-card-dark *) {
+  color: #0F172A !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .text-slate-200,
+  .text-slate-300
+):not(#theme-card-dark):not(#theme-card-dark *) {
+  color: #334155 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .text-slate-400,
+  .text-slate-500
+):not(#theme-card-dark):not(#theme-card-dark *) {
+  color: #475569 !important;
+}
+
+/* Semantic Status & Accent Text Contrast in Daylight Mode (WCAG AA) */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .text-sky-200,
+  .text-sky-300,
+  .text-sky-300\/90,
+  .text-sky-400,
+  .text-sky-400\/80,
+  .text-sky-500
+):not(#theme-card-dark *) {
+  color: #0284C7 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay, #save-status-toast) :where(
+  .text-amber-200,
+  .text-amber-200\/80,
+  .text-amber-300,
+  .text-amber-300\/80,
+  .text-amber-300\/90,
+  .text-amber-400,
+  .text-amber-400\/80,
+  .text-amber-400\/90
+):not(#theme-card-dark *) {
+  color: #B45309 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .text-rose-200,
+  .text-rose-200\/90,
+  .text-rose-300,
+  .text-rose-300\/80,
+  .text-rose-300\/90,
+  .text-rose-400,
+  .text-red-300,
+  .text-red-400
+):not(#theme-card-dark *) {
+  color: #BE123C !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .text-cyan-300,
+  .text-cyan-400
+):not(#theme-card-dark *) {
+  color: #0E7490 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .text-indigo-300,
+  .text-indigo-400
+):not(#theme-card-dark *) {
+  color: #4338CA !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .text-blue-300,
+  .text-blue-400
+):not(#theme-card-dark *) {
+  color: #1D4ED8 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .text-purple-300,
+  .text-purple-400
+):not(#theme-card-dark *) {
+  color: #6D28D9 !important;
+}
+
+/* Step 2: Explicitly preserve crisp white (#FFFFFF) text on solid saturated brand/action buttons & badges */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-blue-600,
+  .bg-sky-500,
+  .bg-blue-700,
+  .bg-sky-600,
+  .bg-sky-500,
+  .bg-indigo-600,
+  .bg-indigo-500,
+  .bg-rose-600,
+  .bg-rose-500,
+  .bg-red-600,
+  .bg-red-700,
+  .bg-amber-600,
+  .bg-amber-700,
+  .bg-amber-500,
+  .bg-blue-600,
+  .bg-blue-500,
+  .bg-sky-600,
+  .bg-sky-700,
+  .bg-sky-800,
+  .bg-sky-900,
+  .bg-cyan-600,
+  .bg-purple-600,
+  .from-blue-600,
+  .from-blue-500,
+  .from-amber-600,
+  .from-amber-500,
+  .from-indigo-600,
+  .from-indigo-500,
+  .from-rose-600,
+  .from-rose-500
+):where(.text-white, .text-slate-100),
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .bg-blue-600,
+  .bg-sky-500,
+  .bg-blue-700,
+  .bg-sky-600,
+  .bg-sky-500,
+  .bg-indigo-600,
+  .bg-indigo-500,
+  .bg-rose-600,
+  .bg-rose-500,
+  .bg-red-600,
+  .bg-red-700,
+  .bg-amber-600,
+  .bg-amber-700,
+  .bg-amber-500,
+  .bg-blue-600,
+  .bg-blue-500,
+  .bg-sky-600,
+  .bg-sky-700,
+  .bg-sky-800,
+  .bg-sky-900,
+  .bg-cyan-600,
+  .bg-purple-600,
+  .from-blue-600,
+  .from-blue-500,
+  .from-amber-600,
+  .from-amber-500,
+  .from-indigo-600,
+  .from-indigo-500,
+  .from-rose-600,
+  .from-rose-500
+) :where(.text-white, .text-slate-100, .text-slate-200),
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) .text-white[style*="background"] {
+  color: #FFFFFF !important;
+}
+
+/* Preserve white text on solid saturated hover states */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  .hover\:bg-blue-600:hover,
+  .hover\:bg-sky-500:hover,
+  .hover\:bg-rose-600:hover,
+  .hover\:bg-rose-500:hover,
+  .hover\:bg-red-600:hover,
+  .hover\:bg-indigo-600:hover,
+  .hover\:bg-indigo-500:hover,
+  .hover\:bg-amber-600:hover,
+  .hover\:bg-amber-500:hover
+):where(.hover\:text-white, .text-white) {
+  color: #FFFFFF !important;
+}
+
+/* Recharts & SVG Data Visualization Daylight Overrides */
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-cartesian-grid line {
+  stroke: #E2E8F0 !important;
+}
+
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-polar-grid-angle line,
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-polar-grid-concentric polygon,
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-polar-grid-concentric circle {
+  stroke: #CBD5E1 !important;
+}
+
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-cartesian-axis-tick-value tspan,
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-polar-angle-axis-tick-value tspan {
+  fill: #475569 !important;
+}
+
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-default-tooltip {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1) !important;
+}
+
+:where(html.light, html.theme-light) .ellix-app-shell .recharts-tooltip-label {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+/* Inputs, Selects & Textareas inside App Shell in Light Mode */
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea
+) {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+:where(html.light, html.theme-light) :where(.ellix-app-shell, #notification-modal-overlay, #settings-modal-overlay, #account-sync-hub-overlay) :where(
+  input::placeholder,
+  textarea::placeholder
+) {
+  color: #64748B !important;
+}
+
+/* ------------------------------------------------------------- */
+/* ICON, FOCUS, & NUMERIC TYPOGRAPHY NORMALIZATION               */
+/* ------------------------------------------------------------- */
+svg.lucide {
+  stroke-width: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.65);
+  outline-offset: 2px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.font-mono,
+table td,
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------- */
+/* GLOBAL VIEWPORT CONTAINMENT & OVERFLOW PREVENTION             */
+/* ------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base transitions for smooth theme switching */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+/* ------------------------------------------------------------- */
+/* WEBSITE-ONLY CURSOR & HOVER STYLES (ISOLATED FROM APPLICATION)*/
+/* ------------------------------------------------------------- */
+.website-root {
+  /* Scope root marker for landing website only */
+}
+
+/* Website Interactive Card Hover Transitions (Section 10 & 11) */
+.website-root .website-card-hover {
+  position: relative;
+  transition:
+    transform var(--ellix-motion-medium) var(--ellix-motion-ease),
+    box-shadow var(--ellix-motion-medium) var(--ellix-motion-ease),
+    border-color var(--ellix-motion-medium) var(--ellix-motion-ease),
+    background-color var(--ellix-motion-medium) var(--ellix-motion-ease);
+}
+
+.website-root .website-card-hover:hover,
+.website-root .website-card-hover:focus-visible {
+  will-change: transform;
+}
+
+.website-root .website-card-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--ellix-motion-medium) var(--ellix-motion-ease);
+  background: radial-gradient(
+    360px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 0%),
+    rgba(37, 99, 235, 0.07),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.dark .website-root .website-card-hover::before {
+  background: radial-gradient(
+    360px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 0%),
+    rgba(37, 99, 235, 0.11),
+    transparent 70%
+  );
+}
+
+.website-root .website-card-hover > * {
+  position: relative;
+  z-index: 1;
+}
+
+.website-root .website-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.48);
+  box-shadow: 0 14px 30px -8px rgba(37, 99, 235, 0.14), 0 6px 16px -4px rgba(15, 23, 42, 0.06);
+}
+
+.website-root .website-card-hover:hover::before {
+  opacity: 1;
+}
+
+.dark .website-root .website-card-hover:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 18px 36px -10px rgba(37, 99, 235, 0.18), 0 0 22px rgba(37, 99, 235, 0.08);
+}
+
+/* Feature Card Internal Icon & Supporting Content Micro-Interactions (Section 10 & 11) */
+.website-root .website-card-hover svg.lucide {
+  transition: transform var(--ellix-motion-medium) var(--ellix-motion-ease), color var(--ellix-motion-fast) var(--ellix-motion-ease), filter var(--ellix-motion-fast) var(--ellix-motion-ease);
+}
+
+.website-root .website-card-hover:hover .w-10.h-10 svg.lucide,
+.website-root .website-card-hover:hover .w-11.h-11 svg.lucide {
+  transform: translateY(-2.5px) scale(1.06);
+  filter: drop-shadow(0 2px 6px rgba(37, 99, 235, 0.28));
+}
+
+.website-root .website-card-hover:hover .w-10.h-10,
+.website-root .website-card-hover:hover .w-11.h-11 {
+  border-color: rgba(37, 99, 235, 0.45);
+  transition: border-color var(--ellix-motion-medium) var(--ellix-motion-ease), background-color var(--ellix-motion-medium) var(--ellix-motion-ease);
+}
+
+.website-root .website-card-hover h3 {
+  transition: transform var(--ellix-motion-medium) var(--ellix-motion-ease), color var(--ellix-motion-fast) var(--ellix-motion-ease);
+}
+
+.website-root .website-card-hover:hover h3 {
+  transform: translateX(1.5px);
+}
+
+/* Website Primary Action Button Glow, Micro-Lift, Press & Magnetic Physics (Section 6 & 7) */
+.website-root .website-btn-glow {
+  transform: translate3d(var(--mag-x, 0px), var(--mag-y, 0px), 0);
+  backface-visibility: hidden;
+  transition:
+    transform 160ms var(--ellix-motion-ease),
+    box-shadow 200ms var(--ellix-motion-ease),
+    background-color 160ms var(--ellix-motion-ease),
+    border-color 160ms var(--ellix-motion-ease),
+    filter 160ms var(--ellix-motion-ease);
+}
+
+.website-root .website-btn-glow:hover,
+.website-root .website-btn-glow:focus-visible {
+  will-change: transform;
+}
+
+.website-root .website-btn-glow > * {
+  transition: transform 160ms var(--ellix-motion-ease);
+  transform: translate3d(var(--mag-inner-x, 0px), var(--mag-inner-y, 0px), 0);
+}
+
+.website-root .website-btn-glow:hover {
+  transform: translate3d(var(--mag-x, 0px), calc(var(--mag-y, 0px) - 1.5px), 0);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.32), 0 0 14px rgba(37, 99, 235, 0.16);
+}
+
+.website-root .website-btn-glow:active {
+  transform: translate3d(var(--mag-x, 0px), var(--mag-y, 0px), 0) scale(0.978);
+  filter: brightness(0.98);
+  transition-duration: 100ms;
+}
+
+/* Website Interactive Tab & Nav Hover Glow with 0 -> 100% Sapphire Indicator (Section 8) */
+.website-root .website-nav-hover {
+  position: relative;
+  transition: color 160ms var(--ellix-motion-ease), background-color 180ms var(--ellix-motion-ease);
+}
+
+.website-root .website-nav-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  border-radius: 9999px;
+  background-color: #2563EB;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 240ms var(--ellix-motion-ease), opacity 180ms var(--ellix-motion-ease);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.website-root .website-nav-hover:hover {
+  color: #2563EB;
+}
+
+.website-root .website-nav-hover:hover::after {
+  transform: scaleX(1);
+  opacity: 0.75;
+}
+
+/* ScrollTrigger Active Section Ambient Accent */
+.website-root main > section {
+  transition: border-color 0.45s var(--ellix-motion-ease), background-color 0.3s ease;
+}
+
+.website-root main > section.ellix-section-inview {
+  border-color: rgba(37, 99, 235, 0.22);
+}
+
+/* Subtle Hero & Workflow Ambient Animations */
+@keyframes ellixAmbientDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(14px, -10px, 0) scale(1.04);
+  }
+}
+
+@keyframes ellixSignalTrace {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.ellix-ambient-drift {
+  animation: ellixAmbientDrift 14s ease-in-out infinite;
+}
+
+.ellix-signal-trace {
+  animation: ellixSignalTrace 3.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ellix-ambient-drift,
+  .ellix-signal-trace {
+    animation: none !important;
+  }
+  .website-root .website-card-hover:hover,
+  .website-root .website-btn-glow:hover {
+    transform: none !important;
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* SECTION 17: SCROLL-TRIGGERED CHART REVEAL ANIMATIONS          */
+/* Bars grow from bottom to top; lines draw from left to right   */
+/* ------------------------------------------------------------- */
+.scroll-chart-reveal .recharts-bar-rectangle path,
+.scroll-chart-reveal .recharts-bar-rectangle rect {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    transform 680ms var(--ellix-motion-ease),
+    opacity 320ms var(--ellix-motion-ease);
+}
+
+.scroll-chart-reveal[data-bar-direction="horizontal"] .recharts-bar-rectangle path,
+.scroll-chart-reveal[data-bar-direction="horizontal"] .recharts-bar-rectangle rect {
+  transform-origin: left bottom;
+  transform: scaleX(0) scaleY(0.4);
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle rect {
+  transform: scaleY(1) scaleX(1);
+  opacity: 1;
+}
+
+/* Subtle left-to-right stagger across bar columns */
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(1) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(1) rect { transition-delay: 0ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(2) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(2) rect { transition-delay: 45ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(3) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(3) rect { transition-delay: 90ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(4) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(4) rect { transition-delay: 135ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(5) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(5) rect { transition-delay: 180ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(6) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(6) rect { transition-delay: 225ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(7) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(7) rect { transition-delay: 270ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(8) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(8) rect { transition-delay: 315ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(n+9) path,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-bar-rectangle:nth-child(n+9) rect { transition-delay: 360ms; }
+
+/* Lines & Area Curves Draw Smoothly from Left to Right */
+.scroll-chart-reveal .recharts-line,
+.scroll-chart-reveal .recharts-area {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0.25;
+  will-change: clip-path, opacity;
+  transition:
+    clip-path 840ms var(--ellix-motion-ease) 60ms,
+    opacity 420ms var(--ellix-motion-ease) 60ms;
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-line,
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-area {
+  clip-path: inset(0 0% 0 0);
+  opacity: 1;
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-line:nth-of-type(2),
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-area:nth-of-type(2) {
+  transition-delay: 130ms;
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-line:nth-of-type(3),
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-area:nth-of-type(3) {
+  transition-delay: 200ms;
+}
+
+/* Pie & Donut Segments Smooth Reveal */
+.scroll-chart-reveal .recharts-pie-sector path {
+  transform-box: fill-box;
+  transform-origin: center center;
+  transform: scale(0.84);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    transform 640ms var(--ellix-motion-ease),
+    opacity 360ms var(--ellix-motion-ease);
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector path {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector:nth-child(1) path { transition-delay: 0ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector:nth-child(2) path { transition-delay: 55ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector:nth-child(3) path { transition-delay: 110ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector:nth-child(4) path { transition-delay: 165ms; }
+.scroll-chart-reveal[data-chart-revealed="true"] .recharts-pie-sector:nth-child(n+5) path { transition-delay: 220ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-chart-reveal .recharts-bar-rectangle path,
+  .scroll-chart-reveal .recharts-bar-rectangle rect,
+  .scroll-chart-reveal .recharts-pie-sector path {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .scroll-chart-reveal .recharts-line,
+  .scroll-chart-reveal .recharts-area {
+    clip-path: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* Skeleton Screens Shimmer Effect */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" fill="none">
+  <defs>
+    <!-- Outer Glow Filter -->
+    <filter id="sym-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Top Ribbon Band Surface Gradient -->
+    <linearGradient id="sym-top-surf" x1="20%" y1="70%" x2="80%" y2="20%">
+      <stop offset="0%" stop-color="#1D4ED8" />
+      <stop offset="25%" stop-color="#2563EB" />
+      <stop offset="55%" stop-color="#3B82F6" />
+      <stop offset="85%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#7DD3FC" />
+    </linearGradient>
+
+    <!-- Center Diagonal Band Gradient -->
+    <linearGradient id="sym-diag-surf" x1="10%" y1="90%" x2="90%" y2="20%">
+      <stop offset="0%" stop-color="#082F49" />
+      <stop offset="30%" stop-color="#0284C7" />
+      <stop offset="65%" stop-color="#2563EB" />
+      <stop offset="90%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#BAE6FD" />
+    </linearGradient>
+
+    <!-- Lower Cradle Ribbon Gradient -->
+    <linearGradient id="sym-cradle-surf" x1="15%" y1="20%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="35%" stop-color="#2563EB" />
+      <stop offset="70%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- Inner Cavity / Shadow Gradient -->
+    <linearGradient id="sym-inner-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082F49" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#0C4A6E" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glowing Rim Light (Specular Edge) -->
+    <linearGradient id="sym-rim-glow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2" />
+      <stop offset="30%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#BAE6FD" stop-opacity="1" />
+      <stop offset="100%" stop-color="#F0F9FF" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Floating 3D Sphere Radial Gradient -->
+    <radialGradient id="sym-sphere-grad" cx="35%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#F0F9FF" />
+      <stop offset="20%" stop-color="#BAE6FD" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="80%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#082F49" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Backdrop Glow -->
+  <circle cx="80" cy="80" r="54" fill="#38BDF8" opacity="0.15" filter="url(#sym-glow)" />
+
+  <g transform="translate(4, 2)">
+    <!-- 1. Inner Cavity / Deep Shadow (creates 3D hollow depth behind the loop) -->
+    <path
+      d="M 52 82 C 42 66 52 48 68 38 C 84 28 102 34 112 46 C 104 54 84 68 66 80 Z"
+      fill="url(#sym-inner-shadow)"
+    />
+
+    <!-- 2. Bottom Cradle Fold Underneath -->
+    <path
+      d="M 54 94 C 44 104 46 116 56 122 C 68 128 86 126 102 114 C 112 106 116 96 114 90"
+      stroke="url(#sym-cradle-surf)"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- 3. Main Outer Loop and Diagonal Crossbar ('e' Ribbon) -->
+    <path
+      d="M 38 78 C 30 64 36 44 52 32 C 70 20 96 22 112 36 C 124 46 126 62 118 72 C 108 82 86 96 64 108 C 50 114 40 108 38 96 C 36 84 46 72 62 60 C 76 50 94 48 106 58"
+      stroke="url(#sym-top-surf)"
+      stroke-width="15.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- 4. Glowing Neon Rim Light Contour (Outer Crest) -->
+    <path
+      d="M 38 78 C 30 64 36 44 52 32 C 70 20 96 22 112 36 C 124 46 126 62 118 72"
+      stroke="url(#sym-rim-glow)"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+      filter="url(#sym-glow)"
+    />
+
+    <!-- 5. Diagonal Crossbar Glowing Edge -->
+    <path
+      d="M 116 70 C 102 82 82 94 62 106"
+      stroke="#7DD3FC"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.85"
+    />
+
+    <!-- 6. Bottom Cradle Glowing Rim -->
+    <path
+      d="M 58 122 C 70 128 88 124 104 112 C 114 104 116 96 114 90"
+      stroke="#38BDF8"
+      stroke-width="2"
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.9"
+    />
+
+    <!-- 7. The Floating 3D Sapphire Sphere (Positioned in right cavity) -->
+    <g transform="translate(108, 88)">
+      <!-- Sphere shadow -->
+      <ellipse cx="0" cy="11" rx="9" ry="3.5" fill="#082F49" opacity="0.45" />
+      <!-- Sphere Body -->
+      <circle cx="0" cy="0" r="12.5" fill="url(#sym-sphere-grad)" />
+      <!-- Specular Highlight -->
+      <circle cx="-3.5" cy="-3.5" r="3" fill="#FFFFFF" opacity="0.85" />
+      <circle cx="-1.5" cy="-1.5" r="1.2" fill="#FFFFFF" opacity="0.95" />
+    </g>
+  </g>
+</svg>

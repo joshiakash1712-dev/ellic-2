@@ -1,0 +1,40 @@
+# Ellix Connect
+
+> Business management, without the complexity. Ellix Connect brings billing, inventory, customers, payments, transactions, and business insights into one connected platform for local retailers and small businesses.
+
+## Project Summary
+Ellix Connect is a modern web-based business management platform designed for local retailers, supermarkets, and wholesalers in India (excluding restaurants). It connects counter billing, stock tracking, customer Khata records, payment recording, transaction histories, and business analytics in a unified workspace.
+
+## Core Capabilities & Modules
+
+- **Billing & GST Invoice Generation**: Counter billing with itemized CGST/SGST/IGST tax calculations based on merchant-configured product rates and downloadable/printable invoice templates.
+- **Inventory & Stock Management**: Product catalog management with SKUs, barcodes, stock quantity tracking, low-stock threshold indicators, and supplier restock requests.
+- **Customer Ledger (Khata) & Relationship Management**: Customer profiles, purchase history tracking, outstanding credit balance management, and WhatsApp payment reminder links.
+- **Payments & Multi-Tender Recording**: Recording of Cash, Card, Credit (Khata), and direct merchant-to-bank UPI QR payments using the store's configured UPI ID (VPA).
+- **Transaction History & Day-End Tracking**: Searchable invoice and transaction records with tender filtering and day-end sales summaries.
+- **Business Insights & Sales Analytics**: Revenue summaries, product sales performance, and downloadable CSV/PDF business reports.
+
+## Technical Architecture & Specifications
+
+- **Client Runtime**: React Single Page Application (Web) built with TypeScript, Vite, and Tailwind CSS.
+- **Persistence Layer**: Browser local storage for offline counter continuity combined with Supabase synchronization.
+- **Authentication**: Supabase Authentication (Email/Password and Google Sign-In) with role-based access control.
+- **Tax & Compliance Scope**: Generates GST-formatted invoices and tax summary sheets from merchant inputs; merchants remain responsible for verifying tax rates and official statutory filings.
+
+## Public Indexable Routes
+
+- **Home**: `https://ellix-connect.ai.studio/`
+- **Security & Data Protection Practices**: `https://ellix-connect.ai.studio/security`
+- **Privacy Policy**: `https://ellix-connect.ai.studio/privacy-policy`
+- **Terms of Service**: `https://ellix-connect.ai.studio/terms-of-service`
+- **Cancellation & Refund Policy**: `https://ellix-connect.ai.studio/cancellation-refund-policy`
+- **Cookie & Local Storage Policy**: `https://ellix-connect.ai.studio/cookie-policy`
+- **Data & Privacy Rights**: `https://ellix-connect.ai.studio/data-privacy-rights`
+- **Grievance Redressal Mechanism**: `https://ellix-connect.ai.studio/grievance-redressal`
+- **Help & Support**: `https://ellix-connect.ai.studio/support`
+
+## Machine-Readable Data Endpoints
+
+- **Live About & Metadata API**: `https://ellix-connect.ai.studio/api/about`
+- **Sitemap**: `https://ellix-connect.ai.studio/sitemap.xml`
+- **Full Reference**: `https://ellix-connect.ai.studio/llms-full.txt`

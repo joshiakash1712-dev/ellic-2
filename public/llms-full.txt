@@ -1,0 +1,43 @@
+# Ellix Connect: Technical & Product Reference
+
+## 1. System Overview
+Ellix Connect (`https://ellix-connect.ai.studio/`) is a modern web-based business management platform built for local retailers, specialized merchants, supermarkets, and wholesalers in India (excluding restaurants). It unifies billing, inventory, customers, payments, transactions, and business insights in one connected workspace.
+
+## 2. Core Functional Modules
+
+### A. Billing & GST Invoice Generation
+- Itemized counter billing with product search and barcode lookup.
+- Configurable GST tax slabs (0%, 5%, 12%, 18%, 28%) with CGST, SGST, and IGST breakdowns based on merchant-entered product details.
+- Printable and downloadable invoice formats with WhatsApp sharing links.
+
+### B. Inventory & Catalog Management
+- Product catalog management with SKU codes, categories, pricing, and minimum stock alert thresholds.
+- Automatic stock deduction on completed counter sales.
+- Low-stock indicators and restock order tracking with suppliers and wholesalers.
+
+### C. Customer Ledger (Khata) & CRM
+- Customer directory with contact details, loyalty points, and transaction histories.
+- Digital Khata credit tracking for recording credit sales and partial or full balance settlements.
+- WhatsApp payment reminder links formatted with store UPI details.
+
+### D. Payments & Multi-Tender Recording
+- Support for Cash, Card, UPI QR, and Customer Credit (Khata) payment recording.
+- Dynamic UPI QR generation using the merchant's own configured UPI ID (VPA) for direct customer-to-bank settlement without intermediary fund custody.
+
+### E. Transactions & Business Insights
+- Searchable invoice and transaction logs filterable by date and payment status.
+- Sales analytics, product movement summaries, and CSV/PDF data export tools.
+
+### F. Role-Based Access Control
+- Role separation across store owners/clients, store crew/employees, wholesalers, and platform administrators enforced through Supabase Authentication and database security policies.
+
+## 3. Data Storage & Security Posture
+- **In Transit**: Encrypted HTTPS/TLS connections between the browser, application server, and Supabase cloud services.
+- **At Rest**: Cloud records hosted in Supabase (Postgres database and Authentication) with provider-managed encryption at rest.
+- **Local Browser Storage**: Unencrypted browser local storage used for offline billing continuity and user interface preferences.
+- **Certifications**: Ellix Connect does not claim third-party certifications (such as SOC 2, ISO 27001, PCI DSS, or HIPAA).
+
+## 4. Machine-Readable Endpoints
+- `GET https://ellix-connect.ai.studio/api/about`: Machine-readable JSON summary of application capabilities and public URLs.
+- `GET https://ellix-connect.ai.studio/llms.txt`: Concise AI markdown summary.
+- `GET https://ellix-connect.ai.studio/sitemap.xml`: XML sitemap of public indexable pages.

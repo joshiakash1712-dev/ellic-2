@@ -1,0 +1,40 @@
+{
+  "common": {
+    "appName": "Ellic",
+    "home": "Start",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "search": "Suchen",
+    "online": "Online",
+    "offline": "Offline",
+    "menu": "Menü",
+    "more": "Mehr"
+  },
+  "nav": {
+    "dashboard": "Übersicht",
+    "posBilling": "Kassenabrechnung",
+    "inventory": "Inventar & Bestand",
+    "stock": "Bestand",
+    "customers": "Kunden & Kredit",
+    "customersShort": "Kunden",
+    "suppliers": "Lieferanten",
+    "reports": "Berichte & Steuern",
+    "templates": "Rechnungsvorlagen",
+    "crew": "Personal & Rollen",
+    "mySales": "Meine Verkäufe",
+    "store": "Filiale",
+    "wholesale": "Großhandel",
+    "admin": "Admin"
+  },
+  "landing": {
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "getStarted": "Jetzt starten",
+    "appDemo": "App-Demo",
+    "exitDemo": "Demo beenden"
+  },
+  "settings": {
+    "title": "Systemeinstellungen",
+    "language": "Sprache"
+  }
+}

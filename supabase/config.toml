@@ -1,0 +1,29 @@
+# Supabase CLI configuration (local development + `supabase db push`).
+# The hosted project is already provisioned; this file makes the repository the
+# source of truth for schema changes.
+
+project_id = "qxbkpeacbyypfbtxzudn"
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[api]
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[realtime]
+enabled = true
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+
+[edge_runtime]
+enabled = true
+
+[analytics]
+enabled = false

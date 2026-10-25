@@ -1,0 +1,38 @@
+{
+  "common": {
+    "appName": "এলিক্স কানেক্ট",
+    "home": "হোম",
+    "save": "সংরক্ষণ করুন",
+    "cancel": "বাতিল করুন",
+    "search": "অনুসন্ধান",
+    "online": "অনলাইন",
+    "offline": "অফলাইন",
+    "menu": "মেনু",
+    "more": "আরও"
+  },
+  "nav": {
+    "dashboard": "ড্যাশবোর্ড",
+    "posBilling": "পিওএস বিলিং",
+    "inventory": "ইনভেন্টরি ও স্টক",
+    "stock": "স্টক",
+    "customers": "গ্রাহক ও খাতা",
+    "customersShort": "গ্রাহক",
+    "suppliers": "সরবরাহকারী",
+    "reports": "রিপোর্ট ও জিএসটি",
+    "mySales": "আমার বিক্রয়",
+    "store": "স্টোর",
+    "wholesale": "পাইকারি",
+    "admin": "অ্যাডমিন"
+  },
+  "landing": {
+    "signIn": "সাইন ইন",
+    "signOut": "সাইন আউট",
+    "getStarted": "শুরু করুন",
+    "appDemo": "অ্যাপ ডেমো",
+    "exitDemo": "ডেমো প্রস্থান"
+  },
+  "settings": {
+    "title": "সিস্টেম সেটিংস",
+    "language": "ভাষা"
+  }
+}

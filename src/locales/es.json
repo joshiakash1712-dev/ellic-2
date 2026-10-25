@@ -1,0 +1,51 @@
+{
+  "common": {
+    "appName": "Ellic",
+    "home": "Inicio",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "add": "Añadir",
+    "search": "Buscar",
+    "online": "En línea",
+    "offline": "Sin conexión",
+    "menu": "Menú",
+    "more": "Más"
+  },
+  "nav": {
+    "dashboard": "Panel de Control",
+    "posBilling": "Facturación POS",
+    "pos": "POS",
+    "inventory": "Inventario y Stock",
+    "stock": "Inventario",
+    "customers": "Clientes y Crédito",
+    "customersShort": "Clientes",
+    "suppliers": "Proveedores",
+    "suppliersShort": "Proveedores",
+    "reports": "Informes e Impuestos",
+    "reportsShort": "Informes",
+    "templates": "Plantillas de Factura",
+    "crew": "Personal y Roles",
+    "mySales": "Mis Ventas",
+    "store": "Tienda",
+    "wholesale": "Mayorista",
+    "admin": "Admin"
+  },
+  "landing": {
+    "product": "Producto",
+    "features": "Funciones",
+    "howItWorks": "Cómo Funciona",
+    "guide": "Guía",
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "getStarted": "Comenzar",
+    "appDemo": "Demo Interactiva",
+    "exitDemo": "Salir de Demo"
+  },
+  "settings": {
+    "title": "Configuración del Sistema",
+    "language": "Idioma",
+    "selectLanguage": "Seleccionar Idioma"
+  }
+}

@@ -1,0 +1,16 @@
+# Allow legitimate crawling of the public website
+User-agent: *
+Allow: /
+Disallow: /app
+Disallow: /app/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /demo
+Disallow: /demo/
+Disallow: /api/admin/
+Disallow: /api/client/
+Disallow: /api/subscription/
+Disallow: /api/support/
+
+# Sitemaps
+Sitemap: https://ellix-connect.ai.studio/sitemap.xml

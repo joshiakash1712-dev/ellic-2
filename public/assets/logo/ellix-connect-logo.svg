@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 92" width="380" height="92" fill="none">
+  <defs>
+    <!-- Symbol Gradients -->
+    <linearGradient id="fl-top-surf" x1="20%" y1="70%" x2="80%" y2="20%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="25%" stop-color="#059669" />
+      <stop offset="55%" stop-color="#10B981" />
+      <stop offset="85%" stop-color="#2DD4A7" />
+      <stop offset="100%" stop-color="#5EEAD4" />
+    </linearGradient>
+
+    <linearGradient id="fl-cradle-surf" x1="15%" y1="20%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#0D9488" />
+      <stop offset="35%" stop-color="#10B981" />
+      <stop offset="70%" stop-color="#2DD4A7" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <linearGradient id="fl-rim-glow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.2" />
+      <stop offset="30%" stop-color="#2DD4A7" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#6EE7B7" stop-opacity="1" />
+      <stop offset="100%" stop-color="#F0FDF4" stop-opacity="0.95" />
+    </linearGradient>
+
+    <radialGradient id="fl-sphere-grad" cx="35%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#F0FDF4" />
+      <stop offset="20%" stop-color="#A7F3D0" />
+      <stop offset="50%" stop-color="#2DD4A7" />
+      <stop offset="80%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#042F2E" />
+    </radialGradient>
+
+    <!-- i-dot 3D sphere gradient -->
+    <radialGradient id="fl-i-dot" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E6FFFA" />
+      <stop offset="40%" stop-color="#2DD4A7" />
+      <stop offset="85%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#042F2E" />
+    </radialGradient>
+  </defs>
+
+  <!-- Left: Official Symbol scaled into 80x80 container -->
+  <g transform="translate(6, 6) scale(0.52)">
+    <!-- Bottom Cradle -->
+    <path
+      d="M 54 94 C 44 104 46 116 56 122 C 68 128 86 126 102 114 C 112 106 116 96 114 90"
+      stroke="url(#fl-cradle-surf)"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Main 'e' Loop -->
+    <path
+      d="M 38 78 C 30 64 36 44 52 32 C 70 20 96 22 112 36 C 124 46 126 62 118 72 C 108 82 86 96 64 108 C 50 114 40 108 38 96 C 36 84 46 72 62 60 C 76 50 94 48 106 58"
+      stroke="url(#fl-top-surf)"
+      stroke-width="15.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Glowing Rim Contour -->
+    <path
+      d="M 38 78 C 30 64 36 44 52 32 C 70 20 96 22 112 36 C 124 46 126 62 118 72"
+      stroke="url(#fl-rim-glow)"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <path
+      d="M 116 70 C 102 82 82 94 62 106"
+      stroke="#6EE7B7"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.85"
+    />
+
+    <!-- Floating 3D Sphere -->
+    <g transform="translate(108, 88)">
+      <ellipse cx="0" cy="11" rx="9" ry="3.5" fill="#042F2E" opacity="0.4" />
+      <circle cx="0" cy="0" r="12.5" fill="url(#fl-sphere-grad)" />
+      <circle cx="-3.5" cy="-3.5" r="3" fill="#FFFFFF" opacity="0.85" />
+    </g>
+  </g>
+
+  <!-- Right: Wordmark typography -->
+  <g transform="translate(98, 0)">
+    <!-- "ellix" wordmark in crisp pure vector geometries -->
+    <!-- 'e' -->
+    <path
+      d="M 23 48 C 23 38 31 31 42 31 C 53 31 60 38 60 49 C 60 50.5 59.8 51.5 59.5 52.5 L 31.8 52.5 C 32.5 58 36.5 61.5 42.5 61.5 C 47 61.5 50.5 59.5 52.5 57 L 58.5 60 C 55 64.5 49.5 67.5 42 67.5 C 30.5 67.5 23 59.5 23 48 Z M 51.2 46.5 C 50.8 41.5 47 37.5 41.8 37.5 C 36.8 37.5 33 41.2 32.2 46.5 L 51.2 46.5 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'l' 1 -->
+    <path
+      d="M 67 19 L 75.5 19 L 75.5 66.5 L 67 66.5 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'l' 2 -->
+    <path
+      d="M 83 19 L 91.5 19 L 91.5 66.5 L 83 66.5 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'i' stem -->
+    <path
+      d="M 99 32 L 107.5 32 L 107.5 66.5 L 99 66.5 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'i' 3D orb dot -->
+    <circle cx="103.25" cy="22" r="5.2" fill="url(#fl-i-dot)" />
+    <circle cx="101.8" cy="20.5" r="1.5" fill="#FFFFFF" opacity="0.8" />
+
+    <!-- 'x' left-to-right bar -->
+    <path
+      d="M 115 32 L 124 32 L 143.5 66.5 L 134.5 66.5 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'x' bottom-left segment -->
+    <path
+      d="M 115 66.5 L 123.5 66.5 L 129.5 56 L 125 48 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'x' top-right brand mint slash -->
+    <path
+      d="M 129 49 L 134.5 40 L 144 32 L 135 32 L 127 44.5 Z"
+      fill="#2DD4A7"
+    />
+
+    <!-- Tagline: "CONNECT" -->
+    <text
+      x="24"
+      y="84"
+      font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', sans-serif"
+      font-weight="800"
+      font-size="12"
+      letter-spacing="0.42em"
+      fill="#2DD4A7"
+    >CONNECT</text>
+  </g>
+</svg>
